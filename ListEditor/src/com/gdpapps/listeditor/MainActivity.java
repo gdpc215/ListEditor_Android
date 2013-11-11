@@ -30,25 +30,26 @@ public class MainActivity extends Activity implements Constants {
 	ListView lstList;
 	FileIO ioManager;
 
-	
 	long idSelected = ID_Null;
 	boolean longClick = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		
 		InflatePopUpMenus();	
-		ioManager = new FileIO(this, ListsFolderPath, ListsDataFileName);
-		initListManager();
+		initComponents();
 	}
 
-	private void initListManager(){ 
-	
+	private void initComponents(){ 
+		ioManager = new FileIO(this, ListsFolderPath, ListsDataFileName);
+		
 		listFiles = ioManager.readFile();
+		
 		lstList = (ListView) findViewById(R.id.main_lstList);
+		
 		resetListAdapter();
 		
 		lstList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -56,14 +57,14 @@ public class MainActivity extends Activity implements Constants {
 				public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
 					MainActivity.this.listClick(childView, position, id);
 				}
-			});
+		});
 		lstList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 				@Override
 				public boolean onItemLongClick(AdapterView<?> parentView, View childView, int position, long id) {
 					MainActivity.this.listLongClick(childView, position, id);
 					return false;
 				}
-			});
+		});
 		lstList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				@Override
 				public void onItemSelected(AdapterView<?> parentView, View childView, int position, long id) {
@@ -76,66 +77,6 @@ public class MainActivity extends Activity implements Constants {
 	     	});
 	}
 
-	public void listArrowButtonClick(View v){
-		runEditionWindow((List)v.getTag());
-	}
-	
-	private void listClick(View child, int pos, long id){
-		if(MainActivity.this.isSelectionValid() && MainActivity.this.getIdSelected() == id){
-			MainActivity.this.setIdSelected(ID_Null);
-			child.setSelected(false);
-			Utilities.logPrint("Click: Cleared selection");
-		} else {
-			//no selection or other selection
-			//do: mark selected
-			MainActivity.this.setIdSelected(id);
-			child.setSelected(true);
-			Utilities.logPrint("Click: Selected new item: " + id);
-		}
-		if (longClick){child.setSelected(false); longClick = false;}
-	}
-	
-    private void listLongClick(View child, int pos, long id){
-		//true action: show popup menu/contextual menu
-        longClick = true;
-		runEditionWindow(listFiles.get((int) id));
-	}
-
-	private void listSelected(View child, int pos, long id){
-
-	}
-	
-	private void listNothingSelected(){
-		
-	}
-	
-	private void resetListAdapter(){
-		lstList.setAdapter(new ListAdapter(this, listFiles));
-	}
-	
-	public void runEditionWindow(List item) {
-		longClick = false;
-		idSelected = ID_Null;
-		Intent intent = new Intent(MainActivity.this, EditionActivity.class);
-		Bundle bundle = new Bundle();
-		bundle.putParcelable(BundleKey, item);
-		intent.putExtras(bundle);
-		startActivity(intent);
-	}
-
-//	@Override
-//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//		super.onActivityResult(requestCode, resultCode, data);
-//		switch (requestCode) {
-//			case 0x100: {
-//				if (resultCode == RESULT_OK) {
-//					List item = data.getExtras().getParcelable(BundleKey);
-//					
-//				}
-//			}
-//		}
-//	}
-	
 	private void InflatePopUpMenus() {
 		final Button 
 			file_cmd = (Button) findViewById(R.id.main_mnuFile), 
@@ -213,63 +154,121 @@ public class MainActivity extends Activity implements Constants {
 			}
 		});
 	}
+
+	public void listArrowButtonClick(View v){
+		runEditionWindow((List)v.getTag());
+	}
 	
+	private void listClick(View child, int pos, long id){
+		if(MainActivity.this.isSelectionValid() && MainActivity.this.getIdSelected() == id){
+			MainActivity.this.setIdSelected(ID_Null);
+			child.setSelected(false);
+			Utilities.logPrint("Click: Cleared selection");
+		} else {
+			MainActivity.this.setIdSelected(id);
+			child.setSelected(true);
+			Utilities.logPrint("Click: Selected new item: " + id);
+		}
+		if (longClick){child.setSelected(false); longClick = false;}
+	}
 	
-	public void setIdSelected(long idSelected){
+    	private void listLongClick(View child, int pos, long id){
+		//true action: show popup menu/contextual menu
+        longClick = true;
+		runEditionWindow(listFiles.get((int) id));
+	}
+
+	private void listSelected(View child, int pos, long id){
+
+	}
+	
+	private void listNothingSelected(){
+		
+	}
+	
+	private void resetListAdapter(){
+		lstList.setAdapter(new ListAdapter(this, listFiles));
+	}
+	
+	private void runEditionWindow(List item) {
+		longClick = false;
+		idSelected = ID_Null;
+		Intent intent = new Intent(MainActivity.this, EditionActivity.class);
+		Bundle bundle = new Bundle();
+		bundle.putParcelable(BundleKey, item);
+		intent.putExtras(bundle);
+		startActivity(intent);
+	}
+
+//	@Override
+//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//		super.onActivityResult(requestCode, resultCode, data);
+//		switch (requestCode) {
+//			case 0x100: {
+//				if (resultCode == RESULT_OK) {
+//					List item = data.getExtras().getParcelable(BundleKey);
+//					
+//				}
+//			}
+//		}
+//	}
+	
+
+	private void setIdSelected(long idSelected){
 		this.idSelected = idSelected; 
 		Utilities.logPrint("id selected: " + idSelected);
 	}
 	
-	public long getIdSelected()
+	private long getIdSelected()
      	{return idSelected;} 
 	
-	public boolean isSelectionValid()
+	private boolean isSelectionValid()
 	    {if(idSelected == ID_Null){return false;} else {return true;}}
    
    
-	public void mnuFileNew(){
+	private void mnuFileNew(){
 	    listFiles = ioManager.readFile();	
 	}
-	public void mnuFileSave(){
+	private void mnuFileSave(){
 		ioManager.writeFile(listFiles);
 	}
-	public void mnuFileEdit(){
+	private void mnuFileEdit(){
 		
 	}
-	public void mnuFileDelete(){
-		listFiles.add(new List(1, 
-							   new Info("Name Three", "Location Four", new Date(03, DayOfWeek.SATURDAY, DateType.EVENT_DATE), new Date(4,  DayOfWeek.SUNDAY, DateType.LIST_CLOSURE)), 
-							   new ArrayList<String>()));
+	private void mnuFileDelete(){
+		listFiles.add(new List(1, new Info("Name Three", "Location Four", 
+		new Date(03, DayOfWeek.SATURDAY, DateType.EVENT_DATE), 
+		new Date(4,  DayOfWeek.SUNDAY, DateType.LIST_CLOSURE)), 
+		new ArrayList<String>()));
 		resetListAdapter();
 	}
-	public void mnuFileExit(){
+	private void mnuFileExit(){
 		mnuFileSave();
+	}
+	
+	private void mnuEditTitle(){
+		
+	}
+	private void mnuEditInfo(){
+		
+	}
+	private void mnuEditDuplicate(){
+		
+	}
+	private void mnuEditEraseContent(){
+		
+	}
+	private void mnuEditForceFormat(){
 		
 	}
 	
-	public void mnuEditTitle(){
+	private void mnuOptionsFormatOptions(){
 		
 	}
-	public void mnuEditInfo(){
+	private void mnuOptionsConfig(){
 		
 	}
-	public void mnuEditDuplicate(){
-		
-	}
-	public void mnuEditEraseContent(){
-		
-	}
-	public void mnuEditForceFormat(){
-		
-	}
-	
-	public void mnuOptionsFormatOptions(){
-		
-	}
-	public void mnuOptionsConfig(){
-		
-	}
-	public void mnuOptionsItem2(){
+	private void mnuOptionsItem2(){
 		
 	}
 	
