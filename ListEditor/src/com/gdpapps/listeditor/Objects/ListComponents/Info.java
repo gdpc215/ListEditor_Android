@@ -1,4 +1,4 @@
-package com.gdpapps.listeditor.Objects;
+package com.gdpapps.listeditor.Objects.ListComponents;
 
 
 public class Info {

@@ -1,6 +1,6 @@
 package com.gdpapps.listeditor.Managers;
-import android.os.*;
-import com.gdpapps.listeditor.Objects.*;
+import android.os.AsyncTask;
+import com.gdpapps.listeditor.Objects.ListManager;
 
 public class AsyncTaskManager
 {

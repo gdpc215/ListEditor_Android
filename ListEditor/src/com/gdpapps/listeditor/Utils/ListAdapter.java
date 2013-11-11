@@ -1,13 +1,16 @@
 package com.gdpapps.listeditor.Utils;
 
-import java.util.ArrayList;
-import com.gdpapps.listeditor.R;
-import com.gdpapps.listeditor.Objects.List;
 import android.content.Context;
-import android.view.*;
-import android.widget.*;
-import com.gdpapps.listeditor.Utils.*;
-import com.gdpapps.listeditor.Objects.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.TextView;
+import com.gdpapps.listeditor.Objects.ListComponents.Info;
+import com.gdpapps.listeditor.Objects.ListComponents.List;
+import com.gdpapps.listeditor.R;
+import java.util.ArrayList;
 
 public class ListAdapter extends ArrayAdapter<List> {
 	private final Context context;

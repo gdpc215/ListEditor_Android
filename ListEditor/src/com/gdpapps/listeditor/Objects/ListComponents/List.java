@@ -1,4 +1,4 @@
-package com.gdpapps.listeditor.Objects;
+package com.gdpapps.listeditor.Objects.ListComponents;
 
 import java.util.ArrayList;
 

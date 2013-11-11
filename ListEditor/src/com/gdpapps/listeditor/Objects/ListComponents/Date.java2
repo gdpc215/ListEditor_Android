@@ -1,5 +1,4 @@
-package com.gdpapps.listeditor.Objects;
-
+package com.gdpapps.listeditor.Objects.ListComponents;
 public class Date {
 
 	private int hour, dayOfWeek, type;

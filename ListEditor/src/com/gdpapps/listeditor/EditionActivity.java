@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-
-import com.gdpapps.listeditor.Objects.List;
+import com.gdpapps.listeditor.Objects.ListComponents.Info;
+import com.gdpapps.listeditor.Objects.ListComponents.List;
 import com.gdpapps.listeditor.Utils.Constants;
-import com.gdpapps.listeditor.Utils.Utilities;
-import com.gdpapps.listeditor.Objects.Info;
 
 public class EditionActivity extends Activity implements Constants{
 
@@ -35,17 +33,17 @@ public class EditionActivity extends Activity implements Constants{
 		
 		input = (EditText) findViewById(R.id.edition_etInputBox);
 		output = (EditText) findViewById(R.id.edition_etOutputBox);
-		
+
 		cmdAddList = (Button) findViewById(R.id.edition_cmdAddList);
-	    cmdSaveList = (Button) findViewById(R.id.edition_cmdSaveList);
+	   	cmdSaveList = (Button) findViewById(R.id.edition_cmdSaveList);
 		cmdClear = (Button) findViewById(R.id.edition_cmdClear);
-	    cmdExport = (Button) findViewById(R.id.edition_cmdExport);
-	    cmdEditListInfo = (Button) findViewById(R.id.edition_cmdEditListInfo);
-		
-	    tvListNameData = (TextView) findViewById(R.id.edition_tvListNameData);
-	    tvListLocationData = (TextView) findViewById(R.id.edition_tvListLocationData);
-	    tvListDayEventData = (TextView) findViewById(R.id.edition_tvListDayEventData);
-	    tvListDayListCloseData = (TextView) findViewById(R.id.edition_tvListDayListCloseData);
+		cmdExport = (Button) findViewById(R.id.edition_cmdExport);
+		cmdEditListInfo = (Button) findViewById(R.id.edition_cmdEditListInfo);
+
+		tvListNameData = (TextView) findViewById(R.id.edition_tvListNameData);
+		tvListLocationData = (TextView) findViewById(R.id.edition_tvListLocationData);
+		tvListDayEventData = (TextView) findViewById(R.id.edition_tvListDayEventData);
+		tvListDayListCloseData = (TextView) findViewById(R.id.edition_tvListDayListCloseData);
 		
 		cmdAddList.setOnClickListener(new View.OnClickListener() 
 			{@Override public void onClick(View v) {cmdAddList();}});
@@ -58,11 +56,22 @@ public class EditionActivity extends Activity implements Constants{
 		cmdEditListInfo.setOnClickListener(new View.OnClickListener() 
 			{@Override public void onClick(View v) {cmdEditListInfo();}});
 	}
-	public void cmdAddList(){}
-	public void cmdSaveList(){}
-	public void cmdClear(){} 
-	public void cmdExport(){} 
-	public void cmdEditListInfo(){}
+	
+	public void cmdAddList(){
+		
+	}
+	public void cmdSaveList(){
+	
+	}
+	public void cmdClear(){
+		
+	} 
+	public void cmdExport(){
+		
+	} 
+	public void cmdEditListInfo(){
+		
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

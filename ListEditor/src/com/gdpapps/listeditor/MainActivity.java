@@ -1,9 +1,6 @@
 package com.gdpapps.listeditor;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,18 +9,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupMenu;
-
-import com.gdpapps.listeditor.Objects.Info;
-import com.gdpapps.listeditor.Objects.List;
-import com.gdpapps.listeditor.Utils.ListAdapter;
+import com.gdpapps.listeditor.Objects.ListComponents.List;
+import com.gdpapps.listeditor.Objects.ListManager;
 import com.gdpapps.listeditor.Utils.Constants;
-import com.gdpapps.listeditor.Utils.FileIO;
 import com.gdpapps.listeditor.Utils.Utilities;
-import com.gdpapps.listeditor.Objects.Date;
-import com.gdpapps.listeditor.Objects.Date.DateType;
-import com.gdpapps.listeditor.Objects.Date.DayOfWeek;
-import android.widget.*;
-import com.gdpapps.listeditor.Objects.*;
 
 public class MainActivity extends Activity implements Constants {
 
@@ -38,16 +27,15 @@ public class MainActivity extends Activity implements Constants {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		
+
 		InflatePopUpMenus();	
 		initComponents();
-		
 	}
 
 	private void initComponents(){ 		
 		lstList = (ListView) findViewById(R.id.main_lstList);
-		
-		resetListAdapter();
+		manager = new ListManager(this, lstList);
+		manager.resetListAdapter();
 		
 		lstList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				@Override
@@ -153,7 +141,7 @@ public class MainActivity extends Activity implements Constants {
 	}
 
 	public void listArrowButtonClick(View v){
-		runEditionWindow((List)v.getTag());
+		manager.runEditionWindow((List)v.getTag());
 	}
 	
 	private void listClick(View child, int pos, long id){
@@ -171,31 +159,21 @@ public class MainActivity extends Activity implements Constants {
 	
     	private void listLongClick(View child, int pos, long id){
 		//true action: show popup menu/contextual menu
-        longClick = true;
-		runEditionWindow(listFiles.get((int) id));
+        	longClick = true;
+	
 	}
 
 	private void listSelected(View child, int pos, long id){
-
+		
 	}
 	
 	private void listNothingSelected(){
 		
 	}
 	
-	private void resetListAdapter(){
-		lstList.setAdapter(new ListAdapter(this, listFiles));
-	}
+
 	
-	private void runEditionWindow(List item) {
-		longClick = false;
-		idSelected = ID_Null;
-		Intent intent = new Intent(MainActivity.this, EditionActivity.class);
-		Bundle bundle = new Bundle();
-		bundle.putParcelable(BundleKey, item);
-		intent.putExtras(bundle);
-		startActivity(intent);
-	}
+
 
 //	@Override
 //	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -224,20 +202,16 @@ public class MainActivity extends Activity implements Constants {
    
    
 	private void mnuFileNew(){
-	    listFiles = ioManager.readFile();	
+	  
 	}
 	private void mnuFileSave(){
-		ioManager.writeFile(listFiles);
+	
 	}
 	private void mnuFileEdit(){
 		
 	}
 	private void mnuFileDelete(){
-		listFiles.add(new List(1, new Info("Name Three", "Location Four", 
-		new Date(03, DayOfWeek.SATURDAY, DateType.EVENT_DATE), 
-		new Date(4,  DayOfWeek.SUNDAY, DateType.LIST_CLOSURE)), 
-		new ArrayList<String>()));
-		resetListAdapter();
+	
 	}
 	private void mnuFileExit(){
 		mnuFileSave();
