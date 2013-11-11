@@ -1,0 +1,276 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edition_FrameMain"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="top"
+    android:background="@color/white_full"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/edition_FrameButtonBar"
+        style="android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@color/black_overlay" >
+
+        <ImageView
+            android:id="@+id/edition_imgTitleIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/edition_tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="@string/app_name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/edition_mnuFile"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mnuFile_Header" />
+
+        <Button
+            android:id="@+id/edition_mnuEdit"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mnuEdit_Header" />
+
+        <Button
+            android:id="@+id/edition_mnuOptions"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mnuOptions_Header" />
+    </LinearLayout>
+	
+	<RelativeLayout
+        android:id="@+id/edition_FrameInfoWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_full" >
+
+		<RelativeLayout
+		    android:id="@+id/edition_FrameInfo"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_margin="5dp"
+		    android:layout_toLeftOf="@+id/edition_FrameInfoButton"
+		    android:background="@color/teal_smoke"
+		    android:gravity="left"
+		    android:orientation="vertical"
+		    android:padding="3dp" >
+
+			<TextView
+				android:id="@+id/edition_tvListName"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/lblListName"
+				android:textSize="@dimen/font_size" />
+			<TextView
+				android:id="@+id/edition_tvListNameData"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBaseline="@+id/edition_tvListName"
+				android:layout_alignBottom="@+id/edition_tvListName"
+				android:layout_marginLeft="50dp"
+				android:layout_toRightOf="@+id/edition_tvListName"
+				android:text="edition_tvListNameData"
+				android:textSize="@dimen/font_size" />
+			<TextView
+				android:id="@+id/edition_tvListLocation"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_below="@+id/edition_tvListName"
+				android:layout_marginTop="3dp"
+				android:text="@string/lblListLocation"
+				android:textSize="@dimen/font_size" />
+			<TextView
+				android:id="@+id/edition_tvListLocationData"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBaseline="@+id/edition_tvListLocation"
+				android:layout_alignBottom="@+id/edition_tvListLocation"
+				android:layout_alignLeft="@+id/edition_tvListNameData"
+				android:text="edition_tvListLocationData"
+				android:textSize="@dimen/font_size" />
+			<TextView
+				android:id="@+id/edition_tvListDayEvent"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBaseline="@+id/edition_tvListName"
+				android:layout_alignBottom="@+id/edition_tvListName"
+				android:layout_marginLeft="350dp"
+				android:layout_toRightOf="@+id/edition_tvListName"
+				android:text="@string/lblListDayEvent"
+				android:textSize="@dimen/font_size" />
+			<TextView
+				android:id="@+id/edition_tvListDayEventData"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBaseline="@+id/edition_tvListName"
+				android:layout_alignBottom="@+id/edition_tvListName"
+				android:layout_marginLeft="20dp"
+				android:layout_toRightOf="@+id/edition_tvListDayListClose"
+				android:text="edition_tvListDayEventData"
+				android:textSize="@dimen/font_size" />
+			<TextView
+				android:id="@+id/edition_tvListDayListClose"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBaseline="@+id/edition_tvListLocation"
+				android:layout_alignBottom="@+id/edition_tvListLocation"
+				android:layout_alignLeft="@+id/edition_tvListDayEvent"
+				android:text="@string/lblListDayListClose"
+				android:textSize="@dimen/font_size" />
+
+			<TextView
+			    android:id="@+id/edition_tvListDayListCloseData"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignBaseline="@+id/edition_tvListLocation"
+			    android:layout_alignBottom="@+id/edition_tvListLocation"
+			    android:layout_alignLeft="@+id/edition_tvListDayEventData"
+			    android:text="edition_tvListDayListCloseData"
+			    android:textSize="@dimen/font_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/edition_FrameInfoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:padding="3dp"
+            android:background="@color/white_full">
+
+			<Button
+			    android:id="@+id/edition_cmdEditListInfo"
+			    android:layout_width="150dp"
+			    android:layout_height="45dp"
+			    android:layout_centerVertical="true"
+			    android:text="@string/cmdEditInformation" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+	<LinearLayout
+        android:id="@+id/edition_FrameTextEdition"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/black_full"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <ScrollView
+            android:id="@+id/edition_scrollInputBox"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white_full"
+            tools:ignore="NestedWeights" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/edition_etInputBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:gravity="center_vertical|top"
+                    android:inputType="textCapWords|textMultiLine" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/edition_scrollOutputBox"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white_full" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/edition_etOutputBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:gravity="center_vertical|top"
+                    android:inputType="textCapWords|textMultiLine" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edition_FrameTaskBar"
+        style="android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@color/black_overlay" >
+
+        <Button
+            android:id="@+id/edition_cmdAddList"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cmdAddList" />
+
+        <Button
+            android:id="@+id/edition_cmdSaveList"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cmdSaveList" />
+
+		<Button
+            android:id="@+id/edition_cmdClear"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cmdSaveList" />
+
+		<Button
+            android:id="@+id/edition_cmdExport"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cmdSaveList" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cmdSaveAndExit" />
+    </LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item 
+		android:id="@+id/mnuFileNew" 
+		android:title="@string/mnuFileNew"/>
+    <item 
+		android:id="@+id/mnuFileSaveAll" 
+		android:title="@string/mnuFileSaveAll"/>
+    <item 
+		android:id="@+id/mnuFileEdit" 
+		android:title="@string/mnuFileEdit"/>
+    <item 
+		android:id="@+id/mnuFileDelete" 
+		android:title="@string/mnuFileDelete"/>
+    <item 
+		android:id="@+id/mnuFileExit" 
+		android:title="@string/mnuFileExit"/>
+</menu>
+

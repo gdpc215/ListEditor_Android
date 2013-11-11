@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- ............ Universal Strings .................. -->
+    <string name="app_name">List Editor</string>
+
+	<!-- ............ Labels ............................. -->
+    <!-- Main activity -->
+    <string name="lblListFiles">List files: </string>
+
+    <!-- Edition activity -->
+    <string name="lblListName">Name: </string>
+    <string name="lblListLocation">Location: </string>
+    <string name="lblListDayEvent">Day of Event: </string>
+    <string name="lblListDayListClose">Day of List Close: </string>
+
+	<!-- ............ Action Buttons ..................... -->
+    <!-- Main activity -->
+
+
+    <!-- Edition activity -->
+    <string name="cmdAddList">Add List</string>
+    <string name="cmdClearInput">Clear Input Box</string>
+    <string name="cmdSaveList">Save List</string>
+    <string name="cmdSaveAndExit">Save List and Exit</string>
+    <string name="cmdEditInformation">Edit Info</string>
+
+
+
+
+	<!-- ............ Menu Items ......................... -->
+
+    <!-- Menu Items - File (Universal) -->
+    <string name="mnuFile_Header">File</string>
+    <string name="mnuFileExit">Exit App</string>
+
+    <!-- Menu Items - File (Main Menu) -->
+    <string name="mnuFileNew">New List</string>
+    <string name="mnuFileSaveAll">Save Lists</string>
+    <string name="mnuFileEdit">Edit List</string>
+    <string name="mnuFileDelete">Delete List</string>
+
+    <!-- Menu Items - File (Edition Menu) -->
+    <string name="mnuFileSaveList">Save List</string>
+    <string name="mnuFileIgnore">Ignore Changes</string>
+    <string name="mnuFileReturn">Return to Main</string>
+
+
+    <!-- Menu Items - Edit (Universal) -->
+	<string name="mnuEdit_Header">Edit</string>
+	<string name="mnuEditForceFormat">Force Format</string>
+	<string name="mnuEditEraseContent">Erase Content</string>
+
+	<!-- Menu Items - Edit (Main Menu) -->
+	<string name="mnuEditTitle">Edit Title</string>
+	<string name="mnuEditInfo">Edit Information</string>
+	<string name="mnuEditDuplicate">Duplicate List</string>
+
+	<!-- Menu Items - Edit (Edition Menu) -->
+	<string name="mnuEditCut">Cut to Clipboard</string>
+	<string name="mnuEditCopy">Copy to Clipboard</string>
+	<string name="mnuEditPaste">Paste from Clipboard</string>
+
+
+	<!-- Menu Items - Options (Universal) -->
+	<string name="mnuOptions_Header">Options</string>
+
+	<!-- Menu Items - Options (Main Menu) -->
+	<string name="mnuOptionsFormatOptions">Formatting Options</string>
+	<string name="mnuOptionsConfig">Global Configuration</string>
+
+	<!-- Menu Items - Options (Edition Menu) -->
+	<string name="mnuOptionsProperties">List Properties</string>
+
+
+
+</resources>
+

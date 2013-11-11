@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/mnuEditTitle"
+        android:title="@string/mnuEditTitle"/>
+    <item
+        android:id="@+id/mnuEditInfo"
+        android:title="@string/mnuEditInfo"/>
+    <item
+        android:id="@+id/mnuEditDuplicate"
+        android:title="@string/mnuEditDuplicate"/>
+    <item
+        android:id="@+id/mnuEditEraseContent"
+        android:title="@string/mnuEditEraseContent"/>
+    <item
+        android:id="@+id/mnuEditForceFormat"
+        android:title="@string/mnuEditForceFormat"/>
+
+</menu>

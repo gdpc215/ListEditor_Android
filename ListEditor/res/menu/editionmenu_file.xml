@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item 
+		android:id="@+id/mnuFileSaveList" 
+		android:title="@string/mnuFileSaveList"/>
+    <item 
+		android:id="@+id/mnuFileIgnore" 
+		android:title="@string/mnuFileIgnore"/>
+    <item 
+		android:id="@+id/mnuFileReturn" 
+		android:title="@string/mnuFileReturn"/>
+    <item 
+		android:id="@+id/mnuFileExit" 
+		android:title="@string/mnuFileExit"/>
+</menu>
+
