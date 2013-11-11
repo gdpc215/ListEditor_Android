@@ -15,7 +15,7 @@ import android.widget.PopupMenu;
 
 import com.gdpapps.listeditor.Objects.Info;
 import com.gdpapps.listeditor.Objects.List;
-import com.gdpapps.listeditor.Objects.ListAdapter;
+import com.gdpapps.listeditor.Utils.ListAdapter;
 import com.gdpapps.listeditor.Utils.Constants;
 import com.gdpapps.listeditor.Utils.FileIO;
 import com.gdpapps.listeditor.Utils.Utilities;
@@ -23,13 +23,13 @@ import com.gdpapps.listeditor.Objects.Date;
 import com.gdpapps.listeditor.Objects.Date.DateType;
 import com.gdpapps.listeditor.Objects.Date.DayOfWeek;
 import android.widget.*;
+import com.gdpapps.listeditor.Objects.*;
 
 public class MainActivity extends Activity implements Constants {
 
-	ArrayList<List> listFiles;
+	ListManager manager;
+	
 	ListView lstList;
-	FileIO ioManager;
-
 	long idSelected = ID_Null;
 	boolean longClick = false;
 	
@@ -41,13 +41,10 @@ public class MainActivity extends Activity implements Constants {
 		
 		InflatePopUpMenus();	
 		initComponents();
+		
 	}
 
-	private void initComponents(){ 
-		ioManager = new FileIO(this, ListsFolderPath, ListsDataFileName);
-		
-		listFiles = ioManager.readFile();
-		
+	private void initComponents(){ 		
 		lstList = (ListView) findViewById(R.id.main_lstList);
 		
 		resetListAdapter();

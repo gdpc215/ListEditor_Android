@@ -1,4 +1,4 @@
-package com.gdpapps.listeditor.Objects;
+package com.gdpapps.listeditor.Utils;
 
 import java.util.ArrayList;
 import com.gdpapps.listeditor.R;
@@ -7,6 +7,7 @@ import android.content.Context;
 import android.view.*;
 import android.widget.*;
 import com.gdpapps.listeditor.Utils.*;
+import com.gdpapps.listeditor.Objects.*;
 
 public class ListAdapter extends ArrayAdapter<List> {
 	private final Context context;
