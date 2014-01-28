@@ -6,4 +6,6 @@
 <classpathentry kind="src" path="gen"/>
 <classpathentry kind="output" path="bin/classes"/>
 <classpathentry kind="lib" path="/storage/sdcard0/Documents/ListEditor-Backup/Eclipsed/ListEditor_Android/ListEditor/libs/android-support-v4.jar"/>
+<classpathentry kind="lib" path="/storage/sdcard0/Documents/ListEditor-Backup/Eclipsed/ListEditor_Android/ListEditor/libs/activation.jar"/>
+<classpathentry kind="lib" path="/storage/sdcard0/Documents/ListEditor-Backup/Eclipsed/ListEditor_Android/ListEditor/libs/mail.jar"/>
 </classpath>

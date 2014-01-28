@@ -1,6 +1,8 @@
 package com.gdpapps.listeditor;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -8,80 +10,78 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import com.gdpapps.listeditor.Objects.ListComponents.Info;
-import com.gdpapps.listeditor.Objects.ListComponents.List;
+import com.gdpapps.listeditor.ListInfoActivity;
+import com.gdpapps.listeditor.ListObject.ListComps.ListInfoComps.Info;
+import com.gdpapps.listeditor.ListObject.ListComps.ListItem;
 import com.gdpapps.listeditor.Utils.Constants;
+import com.gdpapps.listeditor.Utils.Utilities;
 
 public class EditionActivity extends Activity implements Constants{
 
-    List item;
+    ListItem item;
 	EditText input, output;
 	TextView tvListNameData, tvListLocationData, tvListDayEventData, tvListDayListCloseData;
-
-	private void readBundle(Bundle bundle){
-		if (!bundle.isEmpty()){
-			item = bundle.getParcelable(BundleKey);
-			Info info = item.getInfo();
-			tvListNameData.setText(info.getName());
-			tvListLocationData.setText(info.getLocation());
-			tvListDayEventData.setText(info.getDayOfEvent().getFullDateString());
-			tvListDayListCloseData.setText(info.getDayOfListClose().getFullDateString());
-		}
-	}
-	private void assignInstances(){
-		Button cmdAddList, cmdSaveList, cmdClear, cmdExport, cmdEditListInfo;
-		
-		input = (EditText) findViewById(R.id.edition_etInputBox);
-		output = (EditText) findViewById(R.id.edition_etOutputBox);
-
-		cmdAddList = (Button) findViewById(R.id.edition_cmdAddList);
-	   	cmdSaveList = (Button) findViewById(R.id.edition_cmdSaveList);
-		cmdClear = (Button) findViewById(R.id.edition_cmdClear);
-		cmdExport = (Button) findViewById(R.id.edition_cmdExport);
-		cmdEditListInfo = (Button) findViewById(R.id.edition_cmdEditListInfo);
-
-		tvListNameData = (TextView) findViewById(R.id.edition_tvListNameData);
-		tvListLocationData = (TextView) findViewById(R.id.edition_tvListLocationData);
-		tvListDayEventData = (TextView) findViewById(R.id.edition_tvListDayEventData);
-		tvListDayListCloseData = (TextView) findViewById(R.id.edition_tvListDayListCloseData);
-		
-		cmdAddList.setOnClickListener(new View.OnClickListener() 
-			{@Override public void onClick(View v) {cmdAddList();}});
-		cmdSaveList.setOnClickListener(new View.OnClickListener() 
-			{@Override public void onClick(View v) {cmdSaveList();}});
-		cmdClear.setOnClickListener(new View.OnClickListener() 
-			{@Override public void onClick(View v) {cmdClear();}});
-		cmdExport.setOnClickListener(new View.OnClickListener() 
-			{@Override public void onClick(View v) {cmdExport();}});
-		cmdEditListInfo.setOnClickListener(new View.OnClickListener() 
-			{@Override public void onClick(View v) {cmdEditListInfo();}});
-	}
 	
-	public void cmdAddList(){
-		
-	}
-	public void cmdSaveList(){
+	boolean edition;
+
+	public EditionActivity(){}
 	
-	}
-	public void cmdClear(){
-		
-	} 
-	public void cmdExport(){
-		
-	} 
-	public void cmdEditListInfo(){
-		
+	public EditionActivity(Context context, ListItem listItem, boolean edition){
+		this.item = listItem;
+		this.edition = edition;
+		Intent intent = new Intent(context, EditionActivity.class);
+		context.startActivity(intent);
+	}	
+	public static ListItem showEditionActivity(Context context, ListItem listItem, boolean edition){
+		EditionActivity edAct = new EditionActivity(context, listItem, edition);
+		return edAct.item;
 	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_edition);
+		setContentView(R.layout.activity_listinfo);
 		InflatePopUpMenus();
 		assignInstances();
-		readBundle(getIntent().getExtras());
+		if (edition) {readInfo(item.getInfo()); output.setText(item.getFlatList());}
+		else {ListInformationDiag.showDialog(this);}
 	}
+
+	public void readInfo(Info info){
+		item.setInfo(info);
+		tvListNameData.setText(info.getName());
+		tvListLocationData.setText(info.getLocation());
+		tvListDayEventData.setText(info.getDayOfEvent().getFullDateString());
+		tvListDayListCloseData.setText(info.getDayOfListClose().getFullDateString());
+	}
+	private void assignInstances(){
+		input = (EditText) findViewById(R.id.edition_etInputBox);
+		output = (EditText) findViewById(R.id.edition_etOutputBox);
+
+		((Button) findViewById(R.id.edition_cmdAddList)).setOnClickListener(new View.OnClickListener() 
+			{@Override public void onClick(View v) {cmdAddList();}});
+	   	((Button) findViewById(R.id.edition_cmdSaveList)).setOnClickListener(new View.OnClickListener() 
+			{@Override public void onClick(View v) {cmdSaveList();}});
+		((Button) findViewById(R.id.edition_cmdClear)).setOnClickListener(new View.OnClickListener() 
+			{@Override public void onClick(View v) {cmdClear();}});
+		((Button) findViewById(R.id.edition_cmdExport)).setOnClickListener(new View.OnClickListener() 
+			{@Override public void onClick(View v) {cmdExport();}});
+		((Button) findViewById(R.id.edition_cmdEditListInfo)).setOnClickListener(new View.OnClickListener() 
+			{@Override public void onClick(View v) {cmdEditListInfo();}});
+
+		tvListNameData = (TextView) findViewById(R.id.edition_tvListNameData);
+		tvListLocationData = (TextView) findViewById(R.id.edition_tvListLocationData);
+		tvListDayEventData = (TextView) findViewById(R.id.edition_tvListDayEventData);
+		tvListDayListCloseData = (TextView) findViewById(R.id.edition_tvListDayListCloseData);
+	
+	} 
+	
+	public void cmdEditListInfo() {ListInformationDiag.showDialog(this, item.getInfo(), item.getIndex());}
+	public void cmdAddList() {}
+	public void cmdSaveList() {}
+	public void cmdClear() {}
+	public void cmdExport() {}
 	
 	private void InflatePopUpMenus() {
 		final Button 
@@ -160,12 +160,6 @@ public class EditionActivity extends Activity implements Constants{
 		});*/
 	}
 
-//	private void close(){
-//		Intent intent = new Intent();
-//        Bundle extras = new Bundle();
-//        extras.putParcelable("list", item);
-//		intent.putExtras(extras);
-//        setResult(RESULT_OK, intent);        
-//        finish();
-//	}
+	@Override
+	public void close() {finish();}
 }

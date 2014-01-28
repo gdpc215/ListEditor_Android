@@ -1,0 +1,239 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <TextView
+        android:id="@+id/dialog_listInfo_tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dialog_listInfo_evName"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/diag_lblName"
+        android:textSize="@dimen/font_size" />
+
+    <EditText
+        android:id="@+id/dialog_listInfo_evName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/dialog_listInfo_tvName"
+        android:inputType="textCapWords"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <TextView
+        android:id="@+id/dialog_listInfo_tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dialog_listInfo_evLocation"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/diag_lblLocation"
+        android:textSize="@dimen/font_size" />
+
+    <EditText
+        android:id="@+id/dialog_listInfo_evLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_listInfo_evName"
+        android:layout_toRightOf="@+id/dialog_listInfo_tvLocation"
+        android:inputType="textCapWords"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <CheckBox
+        android:id="@+id/dialog_listInfo_checkRepeated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/dialog_listInfo_evLocation"
+        android:text="@string/diag_lblRepeated"
+        android:textSize="@dimen/font_size" />
+
+    <LinearLayout
+        android:id="@+id/dialog_listInfo_frameDates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/dialog_listInfo_checkRepeated"
+        android:baselineAligned="false"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/dialog_listInfo_tvDateOfEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/dialog_listInfo_evDateOfEvent"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/diag_lblDayOfEvent"
+                android:textSize="@dimen/font_size" />
+
+            <EditText
+                android:id="@+id/dialog_listInfo_evDateOfEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dialog_listInfo_tvDateOfEvent"
+                android:ems="10"
+                android:inputType="none"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/dialog_listInfo_evDateOfEvent"
+                android:baselineAligned="false" >
+
+                <Button
+                    android:id="@+id/dialog_listInfo_cmdDateOfEventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/diag_cmdChangeDate"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/dialog_listInfo_cmdDateOfEventHour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/diag_cmdChangeHour"
+                    tools:ignore="ButtonStyle" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/dialog_listInfo_tvDateOfListClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/dialog_listInfo_evDateOfListClose"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/diag_lblDayOfListClose"
+                android:textSize="@dimen/font_size" />
+
+            <EditText
+                android:id="@+id/dialog_listInfo_evDateOfListClose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dialog_listInfo_tvDateOfListClose"
+                android:ems="10"
+                android:inputType="none"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/dialog_listInfo_evDateOfListClose"
+                android:baselineAligned="false"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/dialog_listInfo_cmdDateOfListCloseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/diag_cmdChangeDate"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/dialog_listInfo_cmdDateOfListCloseHour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/diag_cmdChangeHour"
+                    tools:ignore="ButtonStyle" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialog_listInfo_tvMailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dialog_listInfo_evMailTitle"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/diag_lblMailTitle"
+        android:textSize="@dimen/font_size" />
+
+    <EditText
+        android:id="@+id/dialog_listInfo_evMailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_listInfo_frameDates"
+        android:layout_toRightOf="@+id/dialog_listInfo_tvMailTitle"
+        android:ems="10"
+        android:inputType="textCapWords"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <TextView
+        android:id="@+id/dialog_listInfo_tvMailDestinataries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dialog_listInfo_evMailDestinataries"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/diag_lblMailDestinataries"
+        android:textSize="@dimen/font_size" />
+
+    <EditText
+        android:id="@+id/dialog_listInfo_evMailDestinataries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_listInfo_evMailTitle"
+        android:layout_toRightOf="@+id/dialog_listInfo_tvMailDestinataries"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <Button
+        android:id="@+id/dialog_listInfo_cmdOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/dialog_listInfo_evMailDestinataries"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/diag_cmdSubmitData" />
+
+</RelativeLayout>

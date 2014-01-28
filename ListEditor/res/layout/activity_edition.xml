@@ -85,7 +85,7 @@
 				android:layout_height="wrap_content"
 				android:layout_alignBaseline="@+id/edition_tvListName"
 				android:layout_alignBottom="@+id/edition_tvListName"
-				android:layout_marginLeft="50dp"
+				android:layout_marginLeft="@dimen/spaceColumns_SecondLine_EditActivity"
 				android:layout_toRightOf="@+id/edition_tvListName"
 				android:text="edition_tvListNameData"
 				android:textSize="@dimen/font_size" />
@@ -113,7 +113,7 @@
 				android:layout_height="wrap_content"
 				android:layout_alignBaseline="@+id/edition_tvListName"
 				android:layout_alignBottom="@+id/edition_tvListName"
-				android:layout_marginLeft="350dp"
+				android:layout_marginLeft="330dp"
 				android:layout_toRightOf="@+id/edition_tvListName"
 				android:text="@string/lblListDayEvent"
 				android:textSize="@dimen/font_size" />
@@ -146,6 +146,17 @@
 			    android:layout_alignLeft="@+id/edition_tvListDayEventData"
 			    android:text="edition_tvListDayListCloseData"
 			    android:textSize="@dimen/font_size" />
+			
+			<CheckBox
+				android:id="@+id/edition_cbRepeated"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/spaceColumns_RepeatedBox_EditActivity"
+				android:layout_toRightOf="@+id/edition_tvListName"
+				android:text="@string/checkBoxDisplay"
+				android:textSize="@dimen/font_size"
+				android:clickable="false"/>
         </RelativeLayout>
 
         <RelativeLayout

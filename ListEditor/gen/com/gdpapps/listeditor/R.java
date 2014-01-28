@@ -27,6 +27,8 @@ public final class R {
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
         public static final int font_size=0x7f050002;
+        public static final int spaceColumns_RepeatedBox_EditActivity=0x7f050004;
+        public static final int spaceColumns_SecondLine_EditActivity=0x7f050003;
     }
     public static final class drawable {
         public static final int arrow=0x7f020000;
@@ -38,26 +40,46 @@ public final class R {
         public static final int list_selector=0x7f020006;
     }
     public static final class id {
+        public static final int dialog_listInfo_checkRepeated=0x7f090023;
+        public static final int dialog_listInfo_cmdDateOfEventDate=0x7f090027;
+        public static final int dialog_listInfo_cmdDateOfEventHour=0x7f090028;
+        public static final int dialog_listInfo_cmdDateOfListCloseDate=0x7f09002b;
+        public static final int dialog_listInfo_cmdDateOfListCloseHour=0x7f09002c;
+        public static final int dialog_listInfo_cmdOk=0x7f090031;
+        public static final int dialog_listInfo_evDateOfEvent=0x7f090026;
+        public static final int dialog_listInfo_evDateOfListClose=0x7f09002a;
+        public static final int dialog_listInfo_evLocation=0x7f090022;
+        public static final int dialog_listInfo_evMailDestinataries=0x7f090030;
+        public static final int dialog_listInfo_evMailTitle=0x7f09002e;
+        public static final int dialog_listInfo_evName=0x7f090020;
+        public static final int dialog_listInfo_frameDates=0x7f090024;
+        public static final int dialog_listInfo_tvDateOfEvent=0x7f090025;
+        public static final int dialog_listInfo_tvDateOfListClose=0x7f090029;
+        public static final int dialog_listInfo_tvLocation=0x7f090021;
+        public static final int dialog_listInfo_tvMailDestinataries=0x7f09002f;
+        public static final int dialog_listInfo_tvMailTitle=0x7f09002d;
+        public static final int dialog_listInfo_tvName=0x7f09001f;
         public static final int edition_FrameButtonBar=0x7f090001;
         public static final int edition_FrameInfo=0x7f090008;
         public static final int edition_FrameInfoButton=0x7f090009;
         public static final int edition_FrameInfoWrapper=0x7f090007;
         public static final int edition_FrameMain=0x7f090000;
-        public static final int edition_FrameTaskBar=0x7f090018;
-        public static final int edition_FrameTextEdition=0x7f090013;
-        public static final int edition_cmdAddList=0x7f090019;
-        public static final int edition_cmdClear=0x7f09001b;
-        public static final int edition_cmdEditListInfo=0x7f090012;
-        public static final int edition_cmdExport=0x7f09001c;
-        public static final int edition_cmdSaveList=0x7f09001a;
-        public static final int edition_etInputBox=0x7f090015;
-        public static final int edition_etOutputBox=0x7f090017;
+        public static final int edition_FrameTaskBar=0x7f090019;
+        public static final int edition_FrameTextEdition=0x7f090014;
+        public static final int edition_cbRepeated=0x7f090012;
+        public static final int edition_cmdAddList=0x7f09001a;
+        public static final int edition_cmdClear=0x7f09001c;
+        public static final int edition_cmdEditListInfo=0x7f090013;
+        public static final int edition_cmdExport=0x7f09001d;
+        public static final int edition_cmdSaveList=0x7f09001b;
+        public static final int edition_etInputBox=0x7f090016;
+        public static final int edition_etOutputBox=0x7f090018;
         public static final int edition_imgTitleIcon=0x7f090002;
         public static final int edition_mnuEdit=0x7f090005;
         public static final int edition_mnuFile=0x7f090004;
         public static final int edition_mnuOptions=0x7f090006;
-        public static final int edition_scrollInputBox=0x7f090014;
-        public static final int edition_scrollOutputBox=0x7f090016;
+        public static final int edition_scrollInputBox=0x7f090015;
+        public static final int edition_scrollOutputBox=0x7f090017;
         public static final int edition_tvListDayEvent=0x7f09000e;
         public static final int edition_tvListDayEventData=0x7f09000f;
         public static final int edition_tvListDayListClose=0x7f090010;
@@ -67,46 +89,48 @@ public final class R {
         public static final int edition_tvListName=0x7f09000a;
         public static final int edition_tvListNameData=0x7f09000b;
         public static final int edition_tvTitle=0x7f090003;
-        public static final int list_FrameDates=0x7f090027;
-        public static final int list_cmdArrow=0x7f090028;
-        public static final int list_imgIcon=0x7f090026;
-        public static final int list_tvDateListClose=0x7f09002c;
-        public static final int list_tvDateStartEvent=0x7f09002b;
-        public static final int list_tvListName=0x7f090029;
-        public static final int list_tvLocation=0x7f09002a;
-        public static final int main_FrameButtonBar=0x7f09001e;
-        public static final int main_imgTitleIcon=0x7f09001f;
-        public static final int main_lstList=0x7f090025;
-        public static final int main_mnuEdit=0x7f090022;
-        public static final int main_mnuFile=0x7f090021;
-        public static final int main_mnuOptions=0x7f090023;
-        public static final int main_tvListFiles=0x7f090024;
-        public static final int main_tvTitle=0x7f090020;
-        public static final int mnuEditCopy=0x7f09002e;
-        public static final int mnuEditCut=0x7f09002d;
-        public static final int mnuEditDuplicate=0x7f090039;
-        public static final int mnuEditEraseContent=0x7f090030;
-        public static final int mnuEditForceFormat=0x7f090031;
-        public static final int mnuEditInfo=0x7f090038;
-        public static final int mnuEditPaste=0x7f09002f;
-        public static final int mnuEditTitle=0x7f090037;
-        public static final int mnuFileDelete=0x7f09003d;
-        public static final int mnuFileEdit=0x7f09003c;
-        public static final int mnuFileExit=0x7f090035;
-        public static final int mnuFileIgnore=0x7f090033;
-        public static final int mnuFileNew=0x7f09003a;
-        public static final int mnuFileReturn=0x7f090034;
-        public static final int mnuFileSaveAll=0x7f09003b;
-        public static final int mnuFileSaveList=0x7f090032;
-        public static final int mnuOptionsConfig=0x7f09003f;
-        public static final int mnuOptionsFormatOptions=0x7f09003e;
-        public static final int mnuOptionsProperties=0x7f090036;
-        public static final int toggleButton1=0x7f09001d;
+        public static final int list_FrameDates=0x7f09003b;
+        public static final int list_chkRepeated=0x7f09003f;
+        public static final int list_cmdArrow=0x7f09003e;
+        public static final int list_imgIcon=0x7f09003a;
+        public static final int list_tvDateListClose=0x7f090041;
+        public static final int list_tvDateStartEvent=0x7f090040;
+        public static final int list_tvListName=0x7f09003c;
+        public static final int list_tvLocation=0x7f09003d;
+        public static final int main_FrameButtonBar=0x7f090032;
+        public static final int main_imgTitleIcon=0x7f090033;
+        public static final int main_lstList=0x7f090039;
+        public static final int main_mnuEdit=0x7f090036;
+        public static final int main_mnuFile=0x7f090035;
+        public static final int main_mnuOptions=0x7f090037;
+        public static final int main_tvListFiles=0x7f090038;
+        public static final int main_tvTitle=0x7f090034;
+        public static final int mnuEditCopy=0x7f090043;
+        public static final int mnuEditCut=0x7f090042;
+        public static final int mnuEditDuplicate=0x7f09004e;
+        public static final int mnuEditEraseContent=0x7f090045;
+        public static final int mnuEditForceFormat=0x7f090046;
+        public static final int mnuEditInfo=0x7f09004d;
+        public static final int mnuEditPaste=0x7f090044;
+        public static final int mnuEditTitle=0x7f09004c;
+        public static final int mnuFileDelete=0x7f090052;
+        public static final int mnuFileEdit=0x7f090051;
+        public static final int mnuFileExit=0x7f09004a;
+        public static final int mnuFileIgnore=0x7f090048;
+        public static final int mnuFileNew=0x7f09004f;
+        public static final int mnuFileReturn=0x7f090049;
+        public static final int mnuFileSaveAll=0x7f090050;
+        public static final int mnuFileSaveList=0x7f090047;
+        public static final int mnuOptionsConfig=0x7f090054;
+        public static final int mnuOptionsFormatOptions=0x7f090053;
+        public static final int mnuOptionsProperties=0x7f09004b;
+        public static final int toggleButton1=0x7f09001e;
     }
     public static final class layout {
         public static final int activity_edition=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int list_row=0x7f030002;
+        public static final int activity_listinfo=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int list_row=0x7f030003;
     }
     public static final class menu {
         public static final int editionmenu_edit=0x7f080000;
@@ -120,66 +144,125 @@ public final class R {
         /**  ............ Universal Strings .................. 
          */
         public static final int app_name=0x7f060000;
+        public static final int checkBoxDisplay=0x7f060001;
         /**  ............ Action Buttons ..................... 
  Main activity 
  Edition activity 
          */
-        public static final int cmdAddList=0x7f060006;
-        public static final int cmdClearInput=0x7f060007;
-        public static final int cmdEditInformation=0x7f06000a;
-        public static final int cmdSaveAndExit=0x7f060009;
-        public static final int cmdSaveList=0x7f060008;
-        public static final int lblListDayEvent=0x7f060004;
-        public static final int lblListDayListClose=0x7f060005;
+        public static final int cmdAddList=0x7f060008;
+        public static final int cmdClearInput=0x7f060009;
+        public static final int cmdEditInformation=0x7f06000c;
+        public static final int cmdSaveAndExit=0x7f06000b;
+        public static final int cmdSaveList=0x7f06000a;
+        public static final int diag_cmdChangeDate=0x7f06002b;
+        public static final int diag_cmdChangeHour=0x7f06002c;
+        public static final int diag_cmdSubmitData=0x7f06002a;
+        public static final int diag_lblDayOfEvent=0x7f060026;
+        public static final int diag_lblDayOfListClose=0x7f060027;
+        public static final int diag_lblLocation=0x7f060024;
+        public static final int diag_lblMailDestinataries=0x7f060029;
+        public static final int diag_lblMailTitle=0x7f060028;
+        /**  ............ Dialog text ......................... 
+         */
+        public static final int diag_lblName=0x7f060023;
+        public static final int diag_lblRepeated=0x7f060025;
+        /**  Edit Info Dialog 
+         */
+        public static final int diag_lblTitleEdit=0x7f06002d;
+        /**  New List Info Dialog 
+         */
+        public static final int diag_lblTitleNew=0x7f06002e;
+        public static final int ds_dayOfWeekFriday=0x7f060033;
+        /**  ............ Date Strings ..................... 
+         */
+        public static final int ds_dayOfWeekMonday=0x7f06002f;
+        public static final int ds_dayOfWeekSaturday=0x7f060034;
+        public static final int ds_dayOfWeekSunday=0x7f060035;
+        public static final int ds_dayOfWeekThursday=0x7f060032;
+        public static final int ds_dayOfWeekTuesday=0x7f060030;
+        public static final int ds_dayOfWeekWednesday=0x7f060031;
+        public static final int ds_monthApril=0x7f060039;
+        public static final int ds_monthAugust=0x7f06003d;
+        public static final int ds_monthDecemeber=0x7f060041;
+        public static final int ds_monthFebruary=0x7f060037;
+        public static final int ds_monthJanuary=0x7f060036;
+        public static final int ds_monthJuly=0x7f06003c;
+        public static final int ds_monthJune=0x7f06003b;
+        public static final int ds_monthMarch=0x7f060038;
+        public static final int ds_monthMay=0x7f06003a;
+        public static final int ds_monthNovember=0x7f060040;
+        public static final int ds_monthOctober=0x7f06003f;
+        public static final int ds_monthSeptember=0x7f06003e;
+        public static final int lblListDayEvent=0x7f060006;
+        public static final int lblListDayListClose=0x7f060007;
         /**  ............ Labels ............................. 
  Main activity 
          */
-        public static final int lblListFiles=0x7f060001;
-        public static final int lblListLocation=0x7f060003;
+        public static final int lblListFiles=0x7f060003;
+        public static final int lblListLocation=0x7f060005;
         /**  Edition activity 
          */
-        public static final int lblListName=0x7f060002;
-        public static final int mnuEditCopy=0x7f06001b;
+        public static final int lblListName=0x7f060004;
+        public static final int mnuEditCopy=0x7f06001d;
         /**  Menu Items - Edit (Edition Menu) 
          */
-        public static final int mnuEditCut=0x7f06001a;
-        public static final int mnuEditDuplicate=0x7f060019;
-        public static final int mnuEditEraseContent=0x7f060016;
-        public static final int mnuEditForceFormat=0x7f060015;
-        public static final int mnuEditInfo=0x7f060018;
-        public static final int mnuEditPaste=0x7f06001c;
+        public static final int mnuEditCut=0x7f06001c;
+        public static final int mnuEditDuplicate=0x7f06001b;
+        public static final int mnuEditEraseContent=0x7f060018;
+        public static final int mnuEditForceFormat=0x7f060017;
+        public static final int mnuEditInfo=0x7f06001a;
+        public static final int mnuEditPaste=0x7f06001e;
         /**  Menu Items - Edit (Main Menu) 
          */
-        public static final int mnuEditTitle=0x7f060017;
+        public static final int mnuEditTitle=0x7f060019;
         /**  Menu Items - Edit (Universal) 
          */
-        public static final int mnuEdit_Header=0x7f060014;
-        public static final int mnuFileDelete=0x7f060010;
-        public static final int mnuFileEdit=0x7f06000f;
-        public static final int mnuFileExit=0x7f06000c;
-        public static final int mnuFileIgnore=0x7f060012;
+        public static final int mnuEdit_Header=0x7f060016;
+        public static final int mnuFileDelete=0x7f060012;
+        public static final int mnuFileEdit=0x7f060011;
+        public static final int mnuFileExit=0x7f06000e;
+        public static final int mnuFileIgnore=0x7f060014;
         /**  Menu Items - File (Main Menu) 
          */
-        public static final int mnuFileNew=0x7f06000d;
-        public static final int mnuFileReturn=0x7f060013;
-        public static final int mnuFileSaveAll=0x7f06000e;
+        public static final int mnuFileNew=0x7f06000f;
+        public static final int mnuFileReturn=0x7f060015;
+        public static final int mnuFileSaveAll=0x7f060010;
         /**  Menu Items - File (Edition Menu) 
          */
-        public static final int mnuFileSaveList=0x7f060011;
+        public static final int mnuFileSaveList=0x7f060013;
         /**  ............ Menu Items ......................... 
  Menu Items - File (Universal) 
          */
-        public static final int mnuFile_Header=0x7f06000b;
-        public static final int mnuOptionsConfig=0x7f06001f;
+        public static final int mnuFile_Header=0x7f06000d;
+        public static final int mnuOptionsConfig=0x7f060021;
         /**  Menu Items - Options (Main Menu) 
          */
-        public static final int mnuOptionsFormatOptions=0x7f06001e;
+        public static final int mnuOptionsFormatOptions=0x7f060020;
         /**  Menu Items - Options (Edition Menu) 
          */
-        public static final int mnuOptionsProperties=0x7f060020;
+        public static final int mnuOptionsProperties=0x7f060022;
         /**  Menu Items - Options (Universal) 
          */
-        public static final int mnuOptions_Header=0x7f06001d;
+        public static final int mnuOptions_Header=0x7f06001f;
+        public static final int msg_DataFileNotReadable=0x7f060046;
+        public static final int msg_DataFileNotWritable=0x7f060047;
+        public static final int msg_DataFileResetted=0x7f060048;
+        public static final int msg_DataFileWriteSuccess=0x7f060049;
+        public static final int msg_DeviceNotReady=0x7f060045;
+        public static final int msg_EmailSentFailure=0x7f060044;
+        public static final int msg_EmailSentSuccess=0x7f060043;
+        public static final int msg_Invali=0x7f06004f;
+        public static final int msg_InvalidName=0x7f06004e;
+        public static final int msg_ListFileCreated=0x7f06004c;
+        public static final int msg_ListFileNotReadable=0x7f06004a;
+        public static final int msg_ListFileNotWritable=0x7f06004b;
+        public static final int msg_ListFileWriteSuccess=0x7f06004d;
+        public static final int msg_ListItemCreated=0x7f060051;
+        public static final int msg_ListItemDeleted=0x7f060050;
+        /**  ............ Messages ......................... 
+         */
+        public static final int msg_NoInternetConnection=0x7f060042;
+        public static final int timeFormat=0x7f060002;
     }
     public static final class style {
         /** 

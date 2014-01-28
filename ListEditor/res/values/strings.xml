@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
+<resources>	
+	
 	<!-- ............ Universal Strings .................. -->
     <string name="app_name">List Editor</string>
-
+	<string name="checkBoxDisplay">Repeated</string>
+	<string name="timeFormat">cccc\', \'dd\' de \'MMMM\' - \'kk\':00 \'aa</string>
+	
 	<!-- ............ Labels ............................. -->
     <!-- Main activity -->
     <string name="lblListFiles">List files: </string>
@@ -17,16 +19,12 @@
 	<!-- ............ Action Buttons ..................... -->
     <!-- Main activity -->
 
-
     <!-- Edition activity -->
     <string name="cmdAddList">Add List</string>
     <string name="cmdClearInput">Clear Input Box</string>
     <string name="cmdSaveList">Save List</string>
     <string name="cmdSaveAndExit">Save List and Exit</string>
     <string name="cmdEditInformation">Edit Info</string>
-
-
-
 
 	<!-- ............ Menu Items ......................... -->
 
@@ -45,7 +43,6 @@
     <string name="mnuFileIgnore">Ignore Changes</string>
     <string name="mnuFileReturn">Return to Main</string>
 
-
     <!-- Menu Items - Edit (Universal) -->
 	<string name="mnuEdit_Header">Edit</string>
 	<string name="mnuEditForceFormat">Force Format</string>
@@ -61,7 +58,6 @@
 	<string name="mnuEditCopy">Copy to Clipboard</string>
 	<string name="mnuEditPaste">Paste from Clipboard</string>
 
-
 	<!-- Menu Items - Options (Universal) -->
 	<string name="mnuOptions_Header">Options</string>
 
@@ -72,7 +68,71 @@
 	<!-- Menu Items - Options (Edition Menu) -->
 	<string name="mnuOptionsProperties">List Properties</string>
 
+	<!-- ............ Dialog text ......................... -->
 
+    <string name="diag_lblName">List display name: </string>
+    <string name="diag_lblLocation">Event location: </string>
+    <string name="diag_lblRepeated"> This event is repeated every week. </string>
+	<string name="diag_lblDayOfEvent">Event day: </string>
+	<string name="diag_lblDayOfListClose">List close: </string>
+	<string name="diag_lblMailTitle">Email title: </string>
+	<string name="diag_lblMailDestinataries">Email dest. (separator ";"): </string>
+	<string name="diag_cmdSubmitData">Submit list</string>
+	<string name="diag_cmdChangeDate">Change date</string>
+	<string name="diag_cmdChangeHour">Change hour</string>
 
+    <!-- Edit Info Dialog -->
+	<string name="diag_lblTitleEdit">Edit List</string>
+	
+	<!-- New List Info Dialog -->
+	<string name="diag_lblTitleNew">New List</string>
+
+	<!-- ............ Date Strings ..................... -->	
+	
+	<string name="ds_dayOfWeekMonday">Lunes</string>
+	<string name="ds_dayOfWeekTuesday">Martes</string>
+	<string name="ds_dayOfWeekWednesday">Miercoles</string>
+	<string name="ds_dayOfWeekThursday">Jueves</string>
+	<string name="ds_dayOfWeekFriday">Viernes</string>
+	<string name="ds_dayOfWeekSaturday">Sabado</string>
+	<string name="ds_dayOfWeekSunday"></string>
+	
+	<string name="ds_monthJanuary">Enero</string>
+	<string name="ds_monthFebruary">Febrero</string>
+	<string name="ds_monthMarch">Marzo</string>
+	<string name="ds_monthApril">Abril</string>
+	<string name="ds_monthMay">Mayo</string>
+	<string name="ds_monthJune">Junio</string>
+	<string name="ds_monthJuly">Julio</string>
+	<string name="ds_monthAugust">Agosto</string>
+	<string name="ds_monthSeptember">Setiembre</string>
+	<string name="ds_monthOctober">Octubre</string>
+	<string name="ds_monthNovember">Noviembre</string>
+	<string name="ds_monthDecemeber">Diciembre</string>
+	
+	
+	<!-- ............ Messages ......................... -->
+
+    <string name="msg_NoInternetConnection">No internet connection detected. Please connect to the internet and try again.</string>
+	<string name="msg_EmailSentSuccess">Email sent successfully.</string>
+	<string name="msg_EmailSentFailure">Email not sent due to an unhandled exception.</string>
+
+	<string name="msg_DeviceNotReady">The device is not ready. The app cannot access the file system.</string>
+    <string name="msg_DataFileNotReadable">The master data file could not be read.</string>
+	<string name="msg_DataFileNotWritable">The master data file could not be written. </string>
+	<string name="msg_DataFileResetted">The master data file has been resetted to default.</string>
+	<string name="msg_DataFileWriteSuccess">The master file has been successfuly written.</string>
+	
+	<string name="msg_ListFileNotReadable">The selected list file is not available.</string>
+	<string name="msg_ListFileNotWritable">The selected list file could not be written.</string>
+	<string name="msg_ListFileCreated">The new list file has been successfully created.</string>
+	<string name="msg_ListFileWriteSuccess">The selected list file has been successfully written.</string>
+
+	<string name="msg_InvalidName">The new list file has been successfully created.</string>
+	<string name="msg_Invali">The new list file has been successfully created.</string>
+	
+	<string name="msg_ListItemDeleted">The selected list has been successfully deleted.</string>
+	<string name="msg_ListItemCreated">The new list has been successfully created.</string>
+	
 </resources>
 

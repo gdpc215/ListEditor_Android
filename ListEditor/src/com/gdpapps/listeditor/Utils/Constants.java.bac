@@ -11,16 +11,4 @@ public interface Constants {
 		  (int)'N', (int)'Ñ', (int)'O', (int)'P', (int)'Q', (int)'R', (int)'S', (int)'T', (int)'U', 
 		  (int)'V', (int)'W', (int)'X', (int)'Y', (int)'Z', (int)'á', (int)'é', (int)'í', (int)'ó',
 		  (int)'ú', (int)'Á', (int)'É', (int)'Í', (int)'Ó', (int)'Ú'};
-	public static final int charListLenght = 55; 
-	public static final char noneChar = (char)01;
-	public static final int commaChar = (int)',';
-	public static final char comilla = (char)34;
-	public static final String lineBreak = "\n";
-	
-	public static final String noFoundLists = "(No lists available)";
-	
-	public static final String ListsFolderPath = "List Editor/";
-	public static final String ListsDataFileName = "Lists.dat";
-	
-	
 }

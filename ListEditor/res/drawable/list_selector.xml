@@ -9,7 +9,7 @@
         android:drawable="@drawable/grad_hover" 
         android:state_pressed="true"/>
     <item 
-        android:drawable="@drawable/grad_selected" 
+        android:drawable="@drawable/grad_hover" 
         android:state_pressed="false" 
         android:state_selected="true"/>
 </selector>
